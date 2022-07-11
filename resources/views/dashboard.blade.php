@@ -16,9 +16,10 @@
     @if(session('error'))
     <h4>{{session('error')}}</h4>
     @endif
+
                         <div class="mb-3 mt-3">
                             <label for="comment">Phone Numbers:</label>
-                            <input type="text" name="mobile" class="form-control rounded-xl" placeholder="Enter Phone Number">
+                            <input type="text" name="mobile" class="form-control rounded-xl" placeholder="Enter Phone Numbers (e.g +911234567890,+91924522xxxx)">
                           </div>
                         <div class="mb-3 mt-3">
                         <label for="comment">Message:</label>
