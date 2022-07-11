@@ -13,13 +13,25 @@
 
 <form method="POST" action="{{ route('sendSMS')}}">
     @csrf
-    @if(session('error'))
-    <h4>{{session('error')}}</h4>
+    @isset($sent)
+    @if($sent!=="")
+    <h4>Sent to :-{{$sent}}</h4>
     @endif
+    @endisset
+    @isset($notsent)
+    @if($notsent!=="")
+    <h4>Not Sent to :-{{$notsent}}</h4>
+    @endif
+    @endisset
 
-                        <div class="mb-3 mt-3">
+
+                        {{-- <div class="mb-3 mt-3">
                             <label for="comment">Phone Numbers:</label>
                             <input type="text" name="mobile" class="form-control rounded-xl" placeholder="Enter Phone Numbers (e.g +911234567890,+91924522xxxx)">
+                          </div> --}}
+                          <div class="mb-3 mt-3">
+                            <label for="comment">Phone Numbers:</label>
+                            <input name="mobile"  type="text" class="form-control rounded-xl" placeholder="Enter Phone Numbers (e.g +911234567890,+91924522xxxx)">
                           </div>
                         <div class="mb-3 mt-3">
                         <label for="comment">Message:</label>

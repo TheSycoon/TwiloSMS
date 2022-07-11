@@ -6,6 +6,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
+        <link href="{{ asset('tagify.css') }}" rel="stylesheet">
+
         <!-- Latest compiled and minified CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -40,6 +42,16 @@
                 {{ $slot }}
             </main>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <script src="{{asset('jQuery.tagify.min.js')}}"></script>
+<script>
+    // jQuery
+$('[name=tags]').tagify();
+
+// Vanilla JavaScript
+var input = document.querySelector('input[name=mobile]'),
+tagify = new Tagify( input );
+    </script>
 
         @stack('modals')
 
